@@ -2,14 +2,14 @@
  * Intel ACPI Component Architecture
  * AML Disassembler version 20091214
  *
- * Disassembly of ./dsdt.aml, Thu Dec 20 16:28:24 2012
+ * Disassembly of ./dsdt.aml, Thu Dec 20 16:53:42 2012
  *
  *
  * Original Table Header:
  *     Signature        "DSDT"
- *     Length           0x00007E07 (32263)
+ *     Length           0x00007D21 (32033)
  *     Revision         0x02
- *     Checksum         0x81
+ *     Checksum         0x88
  *     OEM ID           "ALASKA"
  *     OEM Table ID     "A M I"
  *     OEM Revision     0x00000010 (16)
@@ -6021,44 +6021,6 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "ALASKA", "A M I", 0x00000010)
                 Method (SMCS, 0, NotSerialized)
                 {
                     Store (0x20, HSTS)
-                }
-
-                Method (_DSM, 4, NotSerialized)
-                {
-                    Store (Package (0x0A)
-                        {
-                            "AAPL,slot-name", 
-                            Buffer (0x09)
-                            {
-                                "Internal"
-                            }, 
-
-                            "built-in", 
-                            Buffer (One)
-                            {
-                                0x01
-                            }, 
-
-                            "device_type", 
-                            Buffer (0x14)
-                            {
-                                "Security Controller"
-                            }, 
-
-                            "model", 
-                            Buffer (0x5D)
-                            {
-                                "Asus Rampage IV Extreme DSDT Version 2.1 By (c) RampageDev.Wordpress.com All Rights Reserved"
-                            }, 
-
-                            "device-id", 
-                            Buffer (0x04)
-                            {
-                                0x22, 0x1D, 0x00, 0x00
-                            }
-                        }, Local0)
-                    DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
-                    Return (Local0)
                 }
             }
         }
